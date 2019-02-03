@@ -7,7 +7,7 @@ We propose a guided feature inversion method to provide instance-level interpret
 * Clone the code from Github:
 ```
 git clone https://github.com/mndu/guided-feature-inversion.git
-cd REAT
+cd guided-feature-inversion
 ```
 
 
@@ -19,6 +19,11 @@ python main.py --layer features.36 --epochs 80 --gpu 0 --network vgg19 --label 1
 
 ## System requirement:
 Python 2.7, torch 0.3, torchvision, matplotlib, PIL, cv2, and skimage.
+
+
+## Acknowledgement:
+This work is motivated by the feature inversion paper [Understanding deep image representations by inverting them](https://arxiv.org/abs/1412.0035), and the [feature inversion implementation](https://github.com/ruthcfong/invert).
+
 
 ## Reference:
 ```
