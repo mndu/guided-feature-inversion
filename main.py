@@ -235,7 +235,6 @@ def invert(image, network, layer, epochs, cuda, target_label):
     plt.show()
 
 
-# python main_gfi.py --layer features.36 --epochs 80 --gpu 0 --network vgg19 --label 1 --image ILSVRC2012_val_00001125.JPEG
 if __name__ == '__main__':
     import argparse
     import sys
