@@ -11,11 +11,14 @@ cd guided-feature-inversion
 ```
 
 
-* Provide explanation to a CNN prediction for an input image. Here we use VGG-19, for both l0 and l1 layer, we use `pool5` layer. The explanation is for the prediction with the largest probability. This framework can also give explanations for other CNN architectures.
+* Provide explanation to a CNN prediction for an input image. Here we use VGG-19, for both l0 and l1 layer, we use `pool5` layer. The explanation is for the prediction with the largest probability. 
 ```
 python main.py --layer features.36 --epochs 80 --gpu 0 --network vgg19 --label 1 --image ILSVRC2012_val_00000021.JPEG
 ```
 
+* By replacing the `--label` with other categories, this framework also could provide explanations for different classes of objects.
+
+* This framework can also give explanations for other CNN architectures, such as AlexNet, and ResNet, by replacing with appropriate network `--network` and layer `--layer`.
 
 ## System requirement:
 Python 2.7, torch 0.3, torchvision, matplotlib, PIL, cv2, and skimage.
