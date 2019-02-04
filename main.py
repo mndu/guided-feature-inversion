@@ -20,7 +20,7 @@ def alpha_prior(x, alpha=2.):
     return torch.abs(x.view(-1)**alpha).sum()
     # equal to: return torch.abs(x.pow(alpha)).sum()
 
-# claculate the difference from the input image and the inverted image
+# claculate the difference of activation values between the input image and the inverted image
 def perceptual_loss(input, target):
     return torch.div(alpha_prior(input - target, alpha=2.), alpha_prior(target, alpha=2.))
 
