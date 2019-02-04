@@ -21,7 +21,7 @@ def alpha_prior(x, alpha=2.):
     # equal to: return torch.abs(x.pow(alpha)).sum()
 
 # claculate the difference from the input image and the inverted image
-def norm_loss(input, target):
+def perceptual_loss(input, target):
     return torch.div(alpha_prior(input - target, alpha=2.), alpha_prior(target, alpha=2.))
 
 
@@ -176,7 +176,7 @@ def invert(image, network, layer, epochs, cuda, target_label):
         # the Forward propagation, get the activation value for the inverted image
         acts = get_acts(model, x_)
         # data loss
-        loss_term = norm_loss(acts, ref_acts) 
+        loss_term = perceptual_loss(acts, ref_acts) 
         #  norm
         norm_term = alpha_prior(w, 2)    
         # highlight loss
